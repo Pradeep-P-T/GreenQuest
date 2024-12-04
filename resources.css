@@ -62,7 +62,7 @@ body {
 .hamburger .line {
     width: 25px;
     height: 3px;
-    background: #fff;
+    background: var(--secondary-color);
 }
 
 /* Header Section */
