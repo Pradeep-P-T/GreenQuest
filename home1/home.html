@@ -5,209 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenQuest Home</title>
-    <style>
-        /* General Reset */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #e0f7e9, #f0f8f5);
-            color: #333;
-            overflow-x: hidden;
-            height: 100vh;
-            padding: 0;
-        }
-
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(76, 175, 80, 0.6);
-            animation: move 20s infinite ease-in-out;
-        }
-
-        @keyframes move {
-            0% {
-                transform: translateY(0) translateX(0);
-            }
-
-            50% {
-                transform: translateY(200px) translateX(-200px);
-            }
-
-            100% {
-                transform: translateY(0) translateX(0);
-            }
-        }
-
-        /* Make the container scrollable and responsive */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #15b9a6, #81c784);
-            color: white;
-            padding: 40px;
-            width: 100%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        .intro {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .button-container {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .btn {
-            background-color: #15b9a6;
-            ;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #15b9a6;
-            transform: scale(1.05);
-        }
-
-        .btn:active {
-            transform: scale(1);
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            color: #666;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        footer a {
-            color: #15b9a6;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .intro {
-                font-size: 1rem;
-                line-height: 1.5;
-            }
-
-            .button-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .btn {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.8rem;
-            }
-
-            .intro {
-                font-size: 0.9rem;
-                line-height: 1.4;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.8rem;
-            }
-
-            footer {
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Green-themed Animation for CO2 Reduction Awareness */
-        .green-impact {
-            background: #95f1dd;
-            padding: 50px;
-            margin-top: 40px;
-            border-radius: 10px;
-            text-align: center;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-
-            50% {
-                transform: scale(1.05);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-        }
-
-        .green-impact h2 {
-            font-size: 1.8rem;
-            color: white;
-        }
-
-        .green-impact p {
-            font-size: 1.2rem;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="#">GreenQuest</a>
+        </div>
+        <nav class="nav-links" id="navLinks">
+            <a href="../about.html">About</a>
+            <a href="../resources.html">Resources</a>
+            <a href="#rewards">Rewards</a>
+            <a href="#contact">Contact</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+        <button class="hamburger" id="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+    </header>
+
+
     <div class="background-animation">
         <div class="circle" style="width: 200px; height: 200px; top: 10%; left: 15%;"></div>
         <div class="circle" style="width: 300px; height: 300px; top: 40%; left: 70%;"></div>
@@ -240,6 +61,7 @@
         </footer>
     </div>
 
+    <script src="home.js"></script>
     <script>
 
         function joinNow() {
@@ -254,7 +76,7 @@
             // Correctly store the object as a string
             localStorage.setItem('status', JSON.stringify({ reg: '', log: 'active' }));
             window.location.href = "../login/login.html";
-            
+
         }
     </script>
 </body>
