@@ -21,11 +21,51 @@
     animation: wave-pattern-dark-green 3s ease-in-out infinite;
 }
 
-/* Dark Mode Styles */
+/* Dark Mode Specific */
 .dark-mode {
-    background-color: #121212; /* Very dark background for dark mode */
+    background-color: #121212;
+    color: white;
 }
 
+.dark-mode .navbar-links a {
+    color: white;
+}
+
+.dark-mode .navbar-btn {
+    color: white;
+    background: linear-gradient(45deg, #444, #222);
+}
+
+.dark-mode-btn {
+    background: none;
+    border: 2px solid #34d399; /* Green border for visibility */
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: white; /* White color for the icon */
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    background-color: rgba(52, 211, 153, 0.2); /* Light green hover effect */
+}
+
+.dark-mode-btn i {
+    pointer-events: none; /* Prevents click events on the icon itself */
+}
+
+
+/* Footer Dark Mode */
+.dark-mode footer {
+    background-color: #333;
+    color: white;
+}
+
+/* Transition Effects */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 /* Navbar Styles */
 nav {
     background-color: rgba(0, 51, 0, 0.9);

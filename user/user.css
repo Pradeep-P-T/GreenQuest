@@ -165,10 +165,24 @@ body {
         grid-template-columns: 1fr;
     }
 }
-.total-points {
+/* Total Points Section */
+/* Total Points Section */
+.total-points-container {
+    display: flex;
+    align-items: center; /* Vertically center the content */
     position: absolute;
-    top: 100px;
-    right: 20px;
+    top: 100px; /* Adjust as needed */
+    left: 20px; /* Adjust left side positioning */
+}
+
+#tp {
+    margin-right: 15px;  /* Space between the text and the circle */
+    color: #fff;  /* White text */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.total-points {
     width: 60px;
     height: 60px;
     background-color: #74c69d;
@@ -182,21 +196,15 @@ body {
     border: 3px solid #084c61;
 }
 
-#tp{
-    padding-top: 100px;
-}
-
-
-
 /* Responsive styling */
 @media (max-width: 768px) {
     /* For smaller screens (tablets and phones) */
+    .total-points-container {
+        right: 15px;
+    }
     #tp {
         font-size: 18px; /* Smaller font for mobile/tablets */
-        padding-top: 50px; /* Reduced padding */
     }
-
-    
 
     .total-points {
         font-size: 16px; /* Smaller text for points */
@@ -205,11 +213,12 @@ body {
 
 @media (max-width: 480px) {
     /* For extra small screens (phones) */
+    .total-points-container {
+        right: 10px;
+    }
     #tp {
         font-size: 16px; /* Even smaller font for smaller phones */
-        padding-top: 30px; /* Further reduced padding */
     }
-
 
     .total-points {
         font-size: 14px; /* Even smaller text */

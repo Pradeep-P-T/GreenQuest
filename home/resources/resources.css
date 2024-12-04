@@ -218,3 +218,70 @@ body {
 .resources-container {
     margin-bottom: 80px; /* Avoid overlap with footer */
 }
+/* Dark Theme Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .animated-bg {
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1), transparent),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05), transparent),
+        linear-gradient(120deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%);
+    background-color: #000;
+}
+
+body.dark-mode .navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .nav-links a {
+    color: #ffffff; /* White text for dark mode */
+    transition: color 0.3s ease;
+}
+
+/* Fix Login Button Text in Dark Mode */
+body.dark-mode .navbar-btn {
+    background-color: #00bd06; /* Button background */
+    color: #003300; /* Dark green text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+body.dark-mode .resource-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .resource-card h2 {
+    color: #ffffff; /* Keep headings white */
+}
+
+body.dark-mode .footer {
+    background-color: #000;
+    color: #ffffff;
+}
+
+/* Moon/Sun Icon Animation */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+body.dark-mode .theme-toggle {
+    color: white; /* Ensure white icon in dark mode */
+}
+

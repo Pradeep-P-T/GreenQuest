@@ -1,32 +1,44 @@
+/* Apply global font and reset styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9); /* Soft greenish-white background */
+    color: #333; /* Neutral dark text color for readability */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Container Styling */
 .container {
     max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    margin: 20px auto;
+    padding: 25px;
+    background: #ffffff; /* Pure white for form container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 15px;
     text-align: center;
 }
 
+/* Title and Description */
 h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #2a9d2e;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2e7d32; /* Dark green for headings */
 }
 
 p {
     font-size: 1rem;
-    margin: 5px 0 20px;
+    margin: 10px 0 20px;
+    color: #555; /* Soft grey text for description */
 }
 
+/* Form Styling */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -34,49 +46,96 @@ p {
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #2e7d32; /* Same dark green as headings */
 }
 
 input {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #ffffff; /* White input background */
+    color: #000; /* Black text for inputs */
     box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+input:focus {
+    border-color: #66bb6a; /* Light green focus border */
+    box-shadow: 0 0 6px rgba(102, 187, 106, 0.5); /* Soft green glow */
+    outline: none;
+}
+
+/* Button Styling */
 button {
-    background-color: #2a9d2e;
+    background: #66bb6a; /* Light green button */
     color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 button:hover {
-    background-color: #238622;
+    background: #43a047; /* Darker green on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow for hover effect */
 }
 
+/* Results Section Styling */
 #results {
-    margin-top: 20px;
+    margin-top: 30px;
     display: none;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f1f8e9; /* Light greenish-white background for results */
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #results h2 {
-    color: #2a9d2e;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #2e7d32; /* Dark green for results header */
 }
 
 #results p {
     font-size: 1.2rem;
     margin: 5px 0;
+    font-weight: 500;
 }
 
 span {
-    font-weight: bold;
+    font-weight: 700;
+    color: #43a047; /* Highlight numbers with green */
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    input, button {
+        font-size: 0.9rem;
+    }
+
+    #results h2 {
+        font-size: 1.5rem;
+    }
+
+    #results p {
+        font-size: 1rem;
+    }
 }
