@@ -50,7 +50,7 @@ async function loginUser(evt) {
         display_message("Login Successful!!", "signin_message");
         const user = userCredential.user;
         
-        window.location.href = "../home1/home.html";
+        window.location.href = "../user/user.html";
         
         
     })
@@ -149,11 +149,11 @@ function validateCity(city) {
 
 // Redirect to home page
 document.getElementById('homeBtnLogin').addEventListener('click', function() {
-    window.location.href = '../home1/home.html';
+    window.location.href = '../home/home.html';
 });
 
 document.getElementById('homeBtnRegister').addEventListener('click', function() {
-    window.location.href = '../home1/home.html';
+    window.location.href = '../home/home.html';
 });
 
 // Function to display a message

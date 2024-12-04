@@ -1,0 +1,103 @@
+/* Background Wave Animation */
+@keyframes wave-pattern-dark-green {
+    0% {
+        background-position: 0 0, 50px 100px, -50px -100px;
+    }
+    50% {
+        background-position: 100px 50px, 0 -50px, -100px 50px;
+    }
+    100% {
+        background-position: 0 0, 50px 100px, -50px -100px;
+    }
+}
+
+.animated-bg {
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 255, 128, 0.1), transparent),
+        radial-gradient(circle at 80% 70%, rgba(0, 255, 128, 0.05), transparent),
+        linear-gradient(120deg, rgba(0, 128, 64, 0.1) 25%, transparent 25%);
+    background-color: #003300; /* Deep dark green base background */
+    background-size: 200% 200%, 150% 150%, 300% 300%;
+    animation: wave-pattern-dark-green 3s ease-in-out infinite;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212; /* Very dark background for dark mode */
+}
+
+/* Navbar Styles */
+nav {
+    background-color: rgba(0, 51, 0, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 16px 0;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-links a:hover {
+    background-color: rgba(34, 197, 94, 0.2);
+    border-radius: 12px;
+    color: #34d399;
+}
+
+.navbar-btn {
+    background: linear-gradient(45deg, #34d399, #059669);
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.navbar-btn:hover {
+    background: linear-gradient(45deg, #22c55e, #059669);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* About Us Section */
+.about-us h1 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+}
+
+.about-us p {
+    color: #e0e0e0;
+    line-height: 1.75;
+}
+
+.btn-primary {
+    background-color: #34d399;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #059669;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+}
+
+footer a {
+    color: #34d399;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #22c55e;
+}

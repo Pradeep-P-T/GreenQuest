@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Green Quest</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="contact.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="animated-bg">
+
+    <!-- Navbar -->
+    <header class="navbar sticky top-0 w-full z-10">
+        <div class="navbar-container container mx-auto flex items-center justify-between">
+            <!-- Logo and Title -->
+            <div class="flex items-center">
+                <img src="../../assets/logo.png" alt="GreenQuest Logo" class="w-10 h-10 mr-3"> <!-- Add Logo here -->
+                <a href="../home.html" class="text-2xl font-bold text-white">GreenQuest</a>
+            </div>
+            <nav class="navbar-links hidden md:flex gap-8">
+                <a href="../home.html">Home</a>
+                <a href="../about/about.html">About</a>
+                <a href="../resources/resources.html">Resources</a>
+                <a href="contact.html" class="text-green-300">Contact</a>
+                <a href="../../login/login.html" class="navbar-btn">Login/Register</a>
+            </nav>
+            <button class="hamburger md:hidden" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contact Us Section -->
+    <div class="contact-container py-20 px-6">
+        <h1 class="text-4xl text-white mb-6 text-center">Contact Us</h1>
+        <p class="text-lg text-gray-300 mb-12 text-center">We'd love to hear from you! Fill out the form below to get in touch with us.</p>
+
+        <form id="contact-form" class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" class="input-field" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <p class="success-message mt-6 text-green-500 text-center" id="success-message" style="display:none;">Thank you! Your message has been sent.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-green-300 py-6 text-center">
+        <p>&copy; 2024 GreenQuest. All rights reserved.</p>
+        <div class="flex justify-center gap-6 mt-4">
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
+            <a href="mailto:contact@greenquest.com">Email</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

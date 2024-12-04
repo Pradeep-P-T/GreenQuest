@@ -1,0 +1,128 @@
+
+/* Background wave animation with circular motion */
+@keyframes wave-pattern-dark-green {
+    0% {
+      background-position: 0% 0%, 50px 100px, -50px -100px;
+    }
+    25% {
+      background-position: 100% 0%, 0% -50px, -100px 50px;
+    }
+    50% {
+      background-position: 100% 100%, -50px 0%, 50px -100px;
+    }
+    75% {
+      background-position: 0% 100%, 0% 50px, -100px -50px;
+    }
+    100% {
+      background-position: 0% 0%, 50px 100px, -50px -100px;
+    }
+  }
+  
+  .animated-bg {
+    position: relative;
+    background-image: 
+      url('../backimage.jpg'), /* Your image */
+      radial-gradient(circle at 20% 30%, rgba(0, 255, 128, 0.1), transparent),
+      radial-gradient(circle at 80% 70%, rgba(0, 255, 128, 0.05), transparent),
+      linear-gradient(120deg, rgba(0, 128, 64, 0.1) 25%, transparent 25%);
+    background-color: #003300; /* Deep dark green base background */
+    background-size: cover, 200% 200%, 150% 150%, 300% 300%; /* Ensures the image properly covers the section */
+    background-position: center, 0% 0%, 50px 100px, -50px -100px;
+    background-blend-mode: overlay; /* Blends the wave effect and image */
+    animation: wave-pattern-dark-green 5s ease-in-out infinite; /* Circular animation */
+    height: 100vh; /* Ensure the background covers the entire page */
+    width: 100%;
+    background-attachment: fixed; /* Keeps the background fixed as the user scrolls */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(0, 51, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 16px 0;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.navbar-links a:hover {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #34d399;
+}
+
+.navbar-btn {
+    background: linear-gradient(45deg, #34d399, #059669);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.navbar-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #22c55e, #059669);
+}
+
+/* Contact Form */
+.contact-container {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #32cd32;
+}
+
+.submit-btn {
+    background-color: #32cd32;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2a9d2e;
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer a {
+    text-decoration: none;
+    color: #34d399;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #22c55e;
+}

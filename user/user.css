@@ -1,0 +1,217 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f1f5f9;
+    color: #333;
+}
+
+/* Background wave animation with circular motion */
+@keyframes wave-pattern-dark-green {
+    0% {
+        background-position: 0% 0%, 50px 100px, -50px -100px;
+    }
+    25% {
+        background-position: 100% 0%, 0% -50px, -100px 50px;
+    }
+    50% {
+        background-position: 100% 100%, -50px 0%, 50px -100px;
+    }
+    75% {
+        background-position: 0% 100%, 0% 50px, -100px -50px;
+    }
+    100% {
+        background-position: 0% 0%, 50px 100px, -50px -100px;
+    }
+}
+
+body {
+    background-image: 
+    url('../home/backimage1.jpg'), /* Your image */
+    radial-gradient(circle at 20% 30%, rgba(0, 255, 128, 0.1), transparent),
+    radial-gradient(circle at 80% 70%, rgba(0, 255, 128, 0.05), transparent),
+    linear-gradient(120deg, rgba(0, 128, 64, 0.1) 25%, transparent 25%);
+  background-color: #003300; /* Deep dark green base background */
+  background-size: cover, 200% 200%, 150% 150%, 300% 300%; /* Ensures the image properly covers the section */
+  background-position: center, 0% 0%, 50px 100px, -50px -100px;
+  background-blend-mode: overlay; /* Blends the wave effect and image */
+  animation: wave-pattern-dark-green 8s ease-in-out infinite; /* Circular animation */
+  height: 100vh; /* Ensure the background covers the entire page */
+  width: 100%;
+  background-attachment: fixed; /* Keeps the background fixed as the user scrolls */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.navbar .logo {
+    display: flex;
+    align-items: center; /* Align the logo image and text vertically */
+}
+
+.navbar .logo img {
+    height: 40px; /* Set the logo image size */
+    margin-right: 10px; /* Add spacing between the logo image and text */
+    transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex; /* Keep text and logo aligned */
+    align-items: center; /* Vertical alignment */
+}
+
+.navbar .logo img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+.navbar .nav-links a {
+    margin-left: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    background-color: rgba(34, 197, 94, 0.2);
+    border-radius: 12px;
+    color: #34d399;
+}
+
+/* Dashboard Content */
+.dashboard {
+    margin-top: 100px;
+    text-align: center;
+    padding: 2rem;
+}
+
+.dashboard h1 {
+    font-size: 2.5rem;
+    color: #34d399; /* Light green text */
+    margin-bottom: 0.5rem;
+}
+
+.dashboard p {
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+/* Card Styling */
+.card {
+    background: rgba(0, 51, 0, 0.8); /* Dark green background for cards */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: rgba(0, 255, 128, 0.8); /* Light green background on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+.total-points {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #74c69d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    border: 3px solid #084c61;
+}
+
+#tp{
+    padding-top: 100px;
+}
+
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    /* For smaller screens (tablets and phones) */
+    #tp {
+        font-size: 18px; /* Smaller font for mobile/tablets */
+        padding-top: 50px; /* Reduced padding */
+    }
+
+    
+
+    .total-points {
+        font-size: 16px; /* Smaller text for points */
+    }
+}
+
+@media (max-width: 480px) {
+    /* For extra small screens (phones) */
+    #tp {
+        font-size: 16px; /* Even smaller font for smaller phones */
+        padding-top: 30px; /* Further reduced padding */
+    }
+
+
+    .total-points {
+        font-size: 14px; /* Even smaller text */
+    }
+}

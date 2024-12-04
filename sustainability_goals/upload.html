@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload with Preview</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Centering the container */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #eafaf1, #c7e8d6);
+            font-family: Arial, sans-serif;
+        }
+
+        .upload-container {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .upload-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #2b2d42;
+        }
+
+        input[type="file"] {
+            display: none;
+            /* Hide the default file input */
+        }
+
+        .custom-upload-button {
+            background-color: #74c69d;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .custom-upload-button:hover {
+            background-color: #52b788;
+        }
+
+        .preview-area {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .preview-area img {
+            max-width: 100%;
+            max-height: 350px;
+            border: 2px solid #8d99ae;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-area p {
+            font-size: 0.9rem;
+            color: #2b2d42;
+        }
+
+        .point-message {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #38a169;
+            font-weight: bold;
+        }
+
+        /* Style for disabled state */
+        .disabled {
+            pointer-events: none;
+            /* Disable all interactions */
+            opacity: 0.5;
+            /* Make the section look grayed out */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="upload-container">
+        <h2>Upload Your Document or Image</h2>
+        <label for="file-input" class="custom-upload-button">Choose File</label>
+        <input type="file" id="file-input" accept=".png,.jpg,.jpeg,.pdf" onchange="displayFile()">
+        <div class="preview-area" id="file-preview">
+            <!-- Preview will be displayed here -->
+        </div>
+        <div class="point-message" id="point-message" style="display: none;">
+            Points added to your total!
+        </div>
+    </div>
+
+    <script>
+        let totalPoints = sessionStorage.getItem("points");
+    
+        // Ensure totalPoints is initialized to 0 if not already set
+        totalPoints = parseInt(totalPoints, 10) || 0;
+        console.log("Initial Total Points:", totalPoints);
+    
+        // let c = 0;
+        // let max_c =1 ; // Set the maximum number of uploads allowed
+    
+        function displayFile() {
+            // c++; // Increment the counter for uploads
+            // max_c--; // Decrease the remaining uploads allowed
+    
+            const input = document.getElementById("file-input");
+            const preview = document.getElementById("file-preview");
+            const pointMessage = document.getElementById("point-message");
+    
+            // Clear previous content
+            preview.innerHTML = "";
+            pointMessage.style.display = "none";
+    
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                const fileType = file.type;
+    
+                // Check if the uploaded file is an image
+                if (fileType.startsWith("image/")) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const img = document.createElement("img");
+                        img.src = e.target.result;
+                        preview.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                } else if (fileType === "application/pdf") {
+                    // For PDFs, show a placeholder message (PDF preview support can be added if needed)
+                    const message = document.createElement("p");
+                    message.textContent = "PDF uploaded: " + file.name;
+                    preview.appendChild(message);
+                } else {
+                    // For unsupported file types, display a warning
+                    const warning = document.createElement("p");
+                    warning.textContent = "Unsupported file type!";
+                    warning.style.color = "red";
+                    preview.appendChild(warning);
+                }
+    
+                // Simulate awarding points for upload
+                const pointsEarned = 100; // Points per upload
+                totalPoints += pointsEarned; // Increment total points
+                sessionStorage.setItem("points", totalPoints); // Save updated points to sessionStorage
+    
+                pointMessage.textContent = `You earned ${pointsEarned} points! Total Points: ${totalPoints} Keep Going!!`;
+                pointMessage.style.display = "block";
+            } else {
+                pointMessage.textContent = `You have reached the maximum upload limit. But don't give up! Keep contributing towards the environment!`;
+                pointMessage.style.display = "block";
+                preview.style.display = "none";
+                console.log("Final Total Points:", totalPoints);
+    
+                // Redirect to the dashboard after the upload limit is reached
+                window.location.href = "../user/user.html";
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

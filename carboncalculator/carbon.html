@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="carbon.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Carbon Footprint Calculator</h1>
+        <p>Estimate your carbon emissions based on daily activities.</p>
+
+        <form id="calculator-form">
+            <!-- Electricity Consumption -->
+            <div class="form-group">
+                <label for="electricity">Electricity Consumption (kWh/day):</label>
+                <input type="number" id="electricity" name="electricity" min="0" required>
+            </div>
+
+            <!-- Car Usage -->
+            <div class="form-group">
+                <label for="car">Transportation (km/day):</label>
+                <input type="number" id="car" name="car" min="0" required>
+            </div>
+
+            <!-- Water Consumption -->
+            <div class="form-group">
+                <label for="water">Water Consumption (liters/day):</label>
+                <input type="number" id="water" name="water" min="0" required>
+            </div>
+
+            <!-- Heating or Gas Usage -->
+            <div class="form-group">
+                <label for="gas">Heating or Gas Usage (liters/month):</label>
+                <input type="number" id="gas" name="gas" min="0" required>
+            </div>
+
+            <button type="submit" class="btn">Calculate</button>
+        </form>
+
+        <div id="results">
+            <h2>Results</h2>
+            <p id="monthly-output">Monthly Carbon Emissions: <span>0</span> kg CO<sub>2</sub></p>
+            <p id="annual-output">Annual Carbon Emissions: <span>0</span> kg CO<sub>2</sub></p>
+        </div>
+    </div>
+
+    <script src="carbon.js"></script>
+</body>
+</html>

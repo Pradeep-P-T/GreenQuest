@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="#">
+                <img src="../assets/logo.png" alt="GreenQuest Logo" class="logo-img">
+                GreenQuest
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Dashboard</a>
+            <a href="../home/home.html">Logout</a>
+        </nav>
+    </header>
+    <h2 id="tp">Total Points</h2>
+    <div class="total-points">
+        <span id="totalPoints"></span>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard">
+        <h1>Welcome to Your Sustainability Dashboard</h1>
+        <p>Earn points for reducing CO₂ and achieving sustainability goals!</p>
+        <div class="grid-container">
+            <div class="card" onclick="window.location.href='../quiz/quiz.html'">
+                <h2>Quiz</h2>
+                <p>Test your knowledge on sustainability and win rewards.</p>
+            </div>
+            
+            <div class="card" onclick="window.location.href='../sustainability_goals/upload.html'">
+                <h2>Upload Certificates</h2>
+                <p>Prove your green efforts and get recognized.</p>
+            </div>
+            <div class="card" onclick="window.location.href='../sustainability_goals/redeem.html'">
+                <h2>Redeem</h2>
+                <p>Use your points for eco-friendly products and services.</p>
+            </div>
+            <div class="card" onclick="window.location.href='../sustainability_goals/goal.html'">
+                <h2>Sustainable Goals</h2>
+                <p>Track and achieve your sustainability objectives.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let points;
+    
+        function navigateTo(section) {
+            // Check and initialize points if undefined
+            if (points == null) {
+                points = 0;
+                console.log("FF", points);
+            }
+            // Save points to sessionStorage
+            sessionStorage.setItem("points", points);
+            window.location.href = `../sustainabilty_goals/${section}.html`;
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            // Safely parse the points from sessionStorage
+            points = parseInt(sessionStorage.getItem('points'), 10) || 0;
+            updateTotalPoints(points); 
+        });
+        function updateTotalPoints(points) {
+            document.getElementById("totalPoints").textContent = points;
+        }
+    </script>
+    
+</body>
+
+</html>

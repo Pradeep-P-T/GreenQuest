@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenQuest</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="home.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body class="animated-bg text-white">
+
+  <!-- Navbar -->
+  <nav>
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center">
+        <img src="../assets/logo.png" alt="GreenQuest Logo" class="w-10 h-10 mr-3">
+        <a href="#" class="text-2xl font-bold">GreenQuest</a>
+      </div>
+      <ul class="flex space-x-6">
+        <li><a href="#" class="hover:text-green-300">Home</a></li>
+        <li class="relative inline-block group">
+          <a href="#" class="hover:text-green-300">Features</a>
+          <ul class="absolute left-0 hidden mt-2 space-y-2 bg-white text-green-800 rounded-lg shadow-md group-hover:block">
+            <li><a href="../sustainability_goals/upload.html" class="block px-4 py-2 whitespace-nowrap">Eco-friendly tasks</a></li>
+            <li><a href="../sustainability_goals/goal.html" class="block px-4 py-2 whitespace-nowrap">Achievements and Badges</a></li>
+            <li><a href="../quiz/quiz.html" class="block px-4 py-2 whitespace-nowrap">Daily/Weekly puzzles</a></li>
+            <li><a href="../sustainability_goals/redeem.html" class="block px-4 py-2 whitespace-nowrap">Exciting Rewards</a></li>
+          </ul>
+        </li>
+        <li><a href="resources/resources.html" class="hover:text-green-300">Resources</a></li>
+        <li><a href="../carboncalculator/carbon.html" class="hover:text-green-300">Carbon Footprint Calculator</a></li>
+        <li><a href="about/about.html" class="hover:text-green-300">About</a></li>
+        <li><a href="contact/contact.html" class="hover:text-green-300">Contact</a></li>
+        <li class="relative group">
+          <!-- Share Button -->
+          <a href="#" class="hover:text-green-300">Share</a>
+          <!-- Share Dropdown -->
+          <div class="absolute right-0 hidden mt-2 bg-white text-green-800 rounded-lg shadow-md group-hover:block w-56">
+            <!-- Logos -->
+            <div class="flex items-center justify-center p-4 border-b">
+              <img src="../assets/bmscelogo.png" alt="BMSCE Logo" class="w-8 h-8 mr-2">
+              <img src="../assets/acmlogo.png" alt="ACM Logo" class="w-8 h-8">
+            </div>
+            <!-- Share Links -->
+            <ul class="space-y-2 text-center py-2">
+              <li>
+                <a href="https://instagram.com/yourhandle" target="_blank" class="block px-4 py-2 hover:bg-green-100">
+                  <i class="fab fa-instagram mr-2"></i> Share on Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/bms-acm" target="_blank" class="block px-4 py-2 hover:bg-green-100">
+                  <i class="fab fa-linkedin mr-2"></i> Share on LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <!-- Add Dark Mode Toggle Here -->
+      <div id="themeToggle" class="flex items-center space-x-2 cursor-pointer">
+        <i id="themeIcon" class="fas fa-moon text-lg"></i> <!-- Moon icon -->
+        <span id="themeText" class="text-sm">Dark Mode</span>
+      </div>
+      <a href="../login/login.html" class="hover:bg-green-500 text-white px-4 py-2 rounded-lg">Login/Register</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="flex items-center justify-center min-h-screen text-center">
+    <div class="px-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+        Empowering <span class="text-green-200">Sustainable Living</span>
+      </h1>
+      <p class="mt-4 text-lg md:text-2xl">Join us on a journey to a greener, more sustainable future.</p>
+      <a href="#features" class="mt-6 inline-block bg-white text-green-800 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-100">
+        Learn More
+      </a>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="bg-white text-green-800 py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Our Mission</h2>
+      <p class="mb-8 text-lg">Leading the way in renewable energy and sustainable practices.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-green-100 rounded-lg shadow-md feature-box">
+          <i class="fas fa-solar-panel text-4xl mb-4"></i> <!-- Solar Panel Icon -->
+          <h3 class="text-2xl font-semibold mb-4">Green Energy</h3>
+          <p>We bring renewable energy solutions for a brighter tomorrow.</p>
+        </div>
+        <div class="p-6 bg-green-100 rounded-lg shadow-md feature-box">
+          <i class="fas fa-leaf text-4xl mb-4"></i> <!-- Leaf Icon -->
+          <h3 class="text-2xl font-semibold mb-4">Sustainability</h3>
+          <p>Promoting sustainable development to protect the planet.</p>
+        </div>
+        <div class="p-6 bg-green-100 rounded-lg shadow-md feature-box">
+          <i class="fas fa-lightbulb text-4xl mb-4"></i> <!-- Lightbulb Icon -->
+          <h3 class="text-2xl font-semibold mb-4">Innovation</h3>
+          <p>Innovating eco-friendly technologies to reduce carbon footprints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+<footer class="bg-green-900 text-green-300 py-8">
+  <div class="container mx-auto text-center">
+    <!-- Social Media Links -->
+    <div class="flex justify-center gap-6 mt-6">
+      
+      <p class="text-lg font-bold">GreenQuest</p>
+      <a href="https://instagram.com" target="_blank" class="text-green-300 hover:text-green-100">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+      <a href="https://whatsapp.com" target="_blank" class="text-green-300 hover:text-green-100">
+        <i class="fab fa-whatsapp text-2xl"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="text-green-300 hover:text-green-100">
+        <i class="fab fa-linkedin text-2xl"></i>
+      </a>
+      <a href="https://gmail.com" class="text-green-300 hover:text-green-100">
+        <i class="fas fa-envelope text-2xl"></i>
+      </a>
+    </div>
+    <!-- Footer Text -->
+    <p class="mt-6 text-sm">&copy; 2024 GreenQuest. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+
+    // Check for saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+      themeText.textContent = 'Light Mode';
+    }
+
+    // Toggle theme
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      
+      // Update icon and text
+      if (isDarkMode) {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        themeText.textContent = 'Light Mode';
+      } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        themeText.textContent = 'Dark Mode';
+      }
+
+      // Save theme to localStorage
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+  });
+</script>
+
+
+</body>
+</html>

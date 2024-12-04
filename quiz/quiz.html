@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Tech & Renewable Energy Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body class="animated-bg">
+    <div class="container">
+        <div class="quiz-container" id="quiz-container">
+            <div id="rules" class="rules">
+                <h2>Quiz Rules</h2>
+                <ol>
+                    <li>Answer all 10 questions related to Green Tech and Renewable Energy.</li>
+                    <li>Choose the correct answer from 4 options.</li>
+                    <li>The timer starts as soon as you begin the quiz.</li>
+                    <li>You can move through questions using Next/Previous buttons.</li>
+                    <li>Submit your quiz once done to see your score.</li>
+                </ol>
+                <button id="startBtn">Start Quiz</button>
+            </div>
+
+            <div id="quiz" class="quiz" style="display: none;">
+                <div id="timer">Time Left: <span id="time"></span> seconds</div>
+                <div id="question-container">
+                    <h3 id="question">Question will appear here</h3>
+                    <div id="options" class="options"></div>
+                </div>
+                <div id="navigation">
+                    <button id="prevBtn" class="nav-btn" onclick="changeQuestion(-1)">Previous</button>
+                    <button id="nextBtn" class="nav-btn" onclick="changeQuestion(1)">Next</button>
+                </div>
+                <button id="submitBtn" class="submit-btn" style="display: none;" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+
+            <div id="score" class="score" style="display: none;">
+                <h2>Your Final Score</h2>
+                <p id="final-score">Score: 0/10</p>
+                <p id="final-time">Time Taken: 0 seconds</p>
+                <button id="startBtn" onclick="window.location.href='../user/user.html'">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
