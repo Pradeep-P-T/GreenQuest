@@ -120,7 +120,7 @@ nav ul li a:hover {
 }
 
 /* Login Button Dynamic Hover Effect */
-nav a[href="../login/login.html"] {
+.login a[href="../login/login.html"] {
   background: linear-gradient(45deg, #004d26, #059669); /* Gradient background */
   font-weight: bold;
   padding: 0.5rem 1.5rem;
@@ -128,7 +128,7 @@ nav a[href="../login/login.html"] {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
-nav a[href="../login/login.html"]:hover {
+.login a[href="../login/login.html"]:hover {
   background: linear-gradient(45deg, #22c55e, #059669); /* Slightly darker gradient on hover */
   transform: scale(1.1); /* Scales up slightly */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */

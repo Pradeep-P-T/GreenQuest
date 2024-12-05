@@ -39,7 +39,7 @@
             /* Hide the default file input */
         }
 
-        .custom-upload-button {
+        .custom-upload-button, #back{
             background-color: #74c69d;
             color: white;
             padding: 10px 20px;
@@ -51,6 +51,9 @@
         }
 
         .custom-upload-button:hover {
+            background-color: #52b788;
+        }
+        #back:hover{
             background-color: #52b788;
         }
 
@@ -98,6 +101,7 @@
         <div class="preview-area" id="file-preview">
             <!-- Preview will be displayed here -->
         </div>
+        <button id="back"><a href="../user/user.html" style="text-decoration: none; color: white;">Go Back</a></button>
         <div class="point-message" id="point-message" style="display: none;">
             Points added to your total!
         </div>

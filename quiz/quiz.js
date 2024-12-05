@@ -53,7 +53,7 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
-let timeLeft = 60; // Reset timer to 60 seconds for each quiz
+let timeLeft = 180; // Reset timer to 60 seconds for each quiz
 let timer;
 
 document.getElementById("startBtn").addEventListener("click", startQuiz);
@@ -62,7 +62,7 @@ function startQuiz() {
     document.getElementById('rules').style.display = 'none';
     document.getElementById('quiz').style.display = 'block';
     score = 0; // Reset score
-    timeLeft = 60; // Reset time
+    timeLeft = 180; // Reset time
     document.getElementById('time').textContent = timeLeft; // Display time
     startTimer();
     showQuestion();
@@ -149,7 +149,7 @@ function submitQuiz() {
 
     // Display score and time taken
     document.getElementById('final-score').textContent = `Score: ${score}/10`;
-    document.getElementById('final-time').textContent = `Time Taken: ${60 - timeLeft} seconds`;
+    document.getElementById('final-time').textContent = `Time Taken: ${180 - timeLeft} seconds`;
 
     // Get current total points from sessionStorage
     let totalPoints = parseInt(sessionStorage.getItem('points'), 10) || 0;
@@ -167,7 +167,7 @@ function submitQuiz() {
 function restartQuiz() {
     currentQuestion = 0;
     score = 0;
-    timeLeft = 60;
+    timeLeft = 180;
     document.getElementById('score').style.display = 'none';
     document.getElementById('rules').style.display = 'block';
     document.getElementById('time').textContent = timeLeft;
