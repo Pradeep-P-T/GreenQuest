@@ -5,7 +5,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
         const section = document.querySelector(this.getAttribute('href'));
         if (section) {
             window.scrollTo({
-                top: section.offsetTop - 50,
+                top: section.offsetTop - 0,
                 behavior: 'smooth',
             });
         }

@@ -247,3 +247,19 @@ nav ul li a:hover {
 nav, header h1, header p, header a, nav ul li a {
   transition: background-color 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
 }
+ @media screen and (max-width: 1250px) {
+    #menu {
+      display: none; /* Hide menu by default on small screens */
+      flex-direction: column;
+      background-color: rgba(0, 51, 0, 0.9); /* Dark green background */
+      position: absolute;
+      top: 50px; /* Below the navbar */
+      right: 0;
+      width: 100%;
+      z-index: 20;
+      padding: 1rem;
+    }
+    #menu.show {
+      display: flex; /* Show menu when toggled */
+    }
+  }

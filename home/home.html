@@ -18,7 +18,11 @@
         <img src="../assets/logo.png" alt="GreenQuest Logo" class="w-10 h-10 mr-3">
         <a href="#" class="text-2xl font-bold">GreenQuest</a>
       </div>
-      <ul class="flex space-x-6">
+      <!-- Hamburger Button -->
+  <button id="menuToggle" class="block lg:hidden text-white text-2xl focus:outline-none">
+    <i class="fas fa-bars"></i>
+  </button>
+      <ul id="menu" class="flex space-x-6">
         <li><a href="#" class="hover:text-green-300">Home</a></li>
         <li class="relative inline-block group">
           <a href="#" class="hover:text-green-300">Features</a>
@@ -29,10 +33,42 @@
             <li><a href="../login/login.html" class="block px-4 py-2 whitespace-nowrap">Exciting Rewards</a></li>
           </ul>
         </li>
-        <li><a href="resources/resources.html" class="hover:text-green-300">Resources</a></li>
+        <li class="relative inline-block group">
+          <a href="resources/resources.html" class="hover:text-green-300">Resources</a>
+          <ul
+            class="absolute left-0 hidden mt-2 space-y-2 bg-white text-green-800 rounded-lg shadow-md group-hover:block">
+            <li><a href="resources/resources.html" class="block px-4 py-2 whitespace-nowrap">Explore Resources</a></li>
+          </ul>
+        </li>
+
+        <li class="relative inline-block group">
+          <a href="../carboncalculator/carbon.html" class="hover:text-green-300">Carbon Footprint Calculator</a>
+          <ul
+            class="absolute left-0 hidden mt-2 space-y-2 bg-white text-green-800 rounded-lg shadow-md group-hover:block">
+            <li><a href="../carboncalculator/carbon.html" class="block px-4 py-2 whitespace-nowrap">Calculator</a></li>
+
+          </ul>
+        </li>
+
+        <li class="relative inline-block group">
+          <a href="../home/about/about.html" class="hover:text-green-300">About Us</a>
+          <ul
+            class="absolute left-0 hidden mt-2 space-y-2 bg-white text-green-800 rounded-lg shadow-md group-hover:block">
+            <li><a href="../home/about/about.html" class="block px-4 py-2 whitespace-nowrap">Know about Website</a></li>
+          </ul>
+        </li>
+        <li class="relative inline-block group">
+          <a href="../home/contact/contact.html" class="hover:text-green-300">Contact Us</a>
+          <ul
+            class="absolute left-0 hidden mt-2 space-y-2 bg-white text-green-800 rounded-lg shadow-md group-hover:block">
+            <li><a href="../home/contact/contact.html" class="block px-4 py-2 whitespace-nowrap">Contact the Team</a></li>
+          </ul>
+        </li>
+
+        <!-- <li><a href="resources/resources.html" class="hover:text-green-300">Resources</a></li>
         <li><a href="../carboncalculator/carbon.html" class="hover:text-green-300">Carbon Footprint Calculator</a></li>
         <li><a href="about/about.html" class="hover:text-green-300">About</a></li>
-        <li><a href="contact/contact.html" class="hover:text-green-300">Contact</a></li>
+        <li><a href="contact/contact.html" class="hover:text-green-300">Contact</a></li> -->
         <li class="relative group">
           <!-- Share Button -->
           <a href="#" class="hover:text-green-300">Share</a>
@@ -164,6 +200,14 @@
 
       // Save theme to localStorage
       localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("show"); // Toggles the 'show' class on the menu
     });
   });
 </script>
